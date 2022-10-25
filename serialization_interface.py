@@ -6,7 +6,7 @@ import json
 class SerializationInterface(metaclass=ABCMeta):
 
     @abstractmethod
-    def serialize_data(self):
+    def serialize_data(self, data):
         pass
 
 
