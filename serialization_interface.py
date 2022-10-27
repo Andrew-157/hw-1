@@ -7,7 +7,7 @@ class SerializationInterface(metaclass=ABCMeta):
 
     @abstractmethod
     def serialize_data(self):
-        pass
+        raise NotImplementedError
 
 
 class SerializeJSON(SerializationInterface):
@@ -15,8 +15,8 @@ class SerializeJSON(SerializationInterface):
         self.data = data
 
     def serialize_data(self):
-       with open("json.json", "w") as file:
-           json.dump(self.data, file)
+        with open("json.json", "w") as file:
+            json.dump(self.data, file)
 
 
 class SerializeBinary(SerializationInterface):
@@ -26,5 +26,3 @@ class SerializeBinary(SerializationInterface):
     def serialize_data(self):
         with open("binary.bin", "wb") as file:
             pickle.dump(self.data, file)
-
-
