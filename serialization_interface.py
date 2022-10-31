@@ -7,7 +7,7 @@ class SerializationInterface(metaclass=ABCMeta):
 
     @abstractmethod
     def serialize_data(self):
-        raise NotImplementedError
+        pass
 
 
 class SerializeJSON(SerializationInterface):
